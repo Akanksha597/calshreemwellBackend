@@ -58,7 +58,7 @@ app.use(limiter);
 // =====================================
 const authRoutes = require("./routes/authRoutes");
 const contactRoutes = require("./routes/contactRoutes");
-const productRoutes = require("./routes/ProductRoutes");
+const productRoutes = require("./routes/productRoutes");
 const companyRoutes = require("./routes/companyRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const downloadRoute = require("./routes/downloadRoutes");
