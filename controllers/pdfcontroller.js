@@ -90,3 +90,29 @@ exports.downloadPdf = async (req, res) => {
     res.status(500).json({ message: "Download failed" });
   }
 };
+
+
+exports.deletePdf = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const pdf = await PdfFile.findByIdAndDelete(id);
+
+    if (!pdf) {
+      return res.status(404).json({
+        success: false,
+        message: "PDF not found",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "PDF deleted successfully",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

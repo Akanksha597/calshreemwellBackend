@@ -6,12 +6,13 @@ const {
   uploadPdf,
   getAllPdfs,
   viewPdf,
-  downloadPdf
+  downloadPdf,
+  deletePdf
 } = require("../controllers/pdfcontroller"); // ✅ correct casing
 
 router.post("/admin/upload-pdf", upload.single("pdf"), uploadPdf);
 router.get("/pdfs", getAllPdfs);
 router.get("/view/:id", viewPdf);
 router.get("/download/:id", downloadPdf);
-
+router.delete("/delete/:id", deletePdf);
 module.exports = router;
