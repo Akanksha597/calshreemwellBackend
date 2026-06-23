@@ -32,8 +32,8 @@ const productSchema = new mongoose.Schema(
 
     unit: {
       type: String,
-      enum: ["ML", "L", "GM", "KG", "PCS"],
-      required: true,
+      
+      
     },
 
     mrpPerUnit: {
